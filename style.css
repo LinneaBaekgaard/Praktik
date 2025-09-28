@@ -230,3 +230,102 @@ footer p {
   font-size: 30px;
   text-align: center;
 }
+
+
+/* ---------- MOBILVENLIG STYLING ---------- */
+@media (max-width: 768px) {
+  /* Hero sektionen: stack tekst og billede ovenpå hinanden */
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    grid-column: 1;
+    padding: 0 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .hero-image {
+    grid-column: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .hero-image img {
+    max-height: 300px;
+    height: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn-solid {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .contact {
+    font-size: 18px;
+  }
+
+  .contact a {
+    font-size: 18px;
+  }
+
+  /* Kompetencer grid → 2 kolonner i stedet for 3 */
+  .kompetencer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .kompetencer-grid img {
+    width: 60px;
+    height: 60px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-left: 15px;
+  }
+  .section-title {
+    width: auto;
+    margin-left: 15px;
+    font-size: 1.5rem;
+  }
+
+  /* Om mig sektion → stack i én kolonne */
+  .ommig-text {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .ommig-text div {
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  .ommig-text h3 {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: 18px;
+  }
+}
