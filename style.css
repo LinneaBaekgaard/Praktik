@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4e9dc;
+}
+html {
+  scroll-behavior: smooth;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sætter baggrundsbillede ind */
+.hero {
+    background-image: url('/imgs/background_image.png'); /* Skift 'path/to/your/image.jpg' til stien til dit billede */
+    background-size: cover; /* Sørger for at billedet dækker hele hero sektionen */
+    background-position: center; /* Centrerer billedet */
+    position: relative; /* nødvendigt for at absolut position virker */
+    margin: 0; 
+    padding-left: 30px;
+}
+
+/* Laver hero sectionen til 2 kollonet grid: */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* To lige store kolonner */}
+
+/* Sætter test til venstre kolonne */
+.hero-text {
+    display: grid;
+    grid-column: 1 / 2; /* Placerer teksten i venstre kolonne */}
+
+/* Sætter billede til højre kolonne */
+
+ .hero-image {
+    grid-column: 2 / 3;         /* stadig i højre kolonne */
+    display: flex;
+    justify-content: flex-end;  /* højre */
+    align-items: flex-end;      /* bund */
+    padding: 0;                 /* ingen luft */
+    padding-top: 30px;
+    height: auto;               /* lad højden følge billedet */
+}
+
+.hero-image img {
+    display: block;
+    max-width: 100%; /* billede fylder højst containerens bredde */
+    height: 700px;
+}
+
+/* Gør overskriften større skrift skrifttype */
+.hero-text h1 {
+    font-size: 7rem; 
+    font-family: poppins, sans-serif;
+    font-weight:100;
+    letter-spacing: 0.3rem;
+    margin-bottom: 0px;
+}
+
+/* Gør tagline større og giv den border top og bottom */
+.tagline {
+    font-size: 1.5rem;
+    font-family: poppins, sans-serif;
+    font-weight: 50;
+    letter-spacing: 0.4rem;
+    padding: 15px 0 0 0;
+    line-height: 45px;
+    position: relative;
+}
+
+/* top border */
+.tagline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0px; 
+    width: calc(100% - 20px);
+    border-top: 1px solid black;
+}
+
+/* bottom border */
+.tagline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 80%;
+    border-bottom: 1px solid black;
+}
+
+/* Call to action knapper */
+.cta-buttons {
+  gap: 50px;
+  margin: 30px 0 20px 0;
+}
+
+.btn-solid {
+  background-color: #201a14;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  width: auto;
+  height: 40px;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.btn-solid:hover {
+  background-color: #fac897;
+}
+
+/* Gør kontakt større */ 
+.contact {
+  font-size: 30px;
+}
+
+.contact a {
+  font-size: 30px;
+  color: black;
+}
+
+/* Gør h2 større og med margin 30 i venstre side */
+h2 {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.section-title {
+    border-bottom: 1px solid #000000;
+    padding: 0 20px 10px 20px;
+    width: 93%;
+    margin-left: 30px;
+}
+
+/* Laver grid til kompetence ikonerne - der skal være 3 kolonner og 2 rækker*/
+.kompetencer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+    grid-template-rows: repeat(2, auto); /* 2 rækker */
+    gap: 20px; /* afstand mellem ikonerne */
+    justify-items: center; /* centrerer ikonerne horisontalt */
+    align-items: center; /* centrerer ikonerne vertikalt */
+    padding: 20px;
+}
+/* Placerer billederne i midten af deres container */
+.kompetencer-grid .kompetence {
+    display: flex;
+    flex-direction: column; /* Stabler billede og tekst lodret */
+    align-items: center; /* Centrerer både billede og tekst */
+    text-align: center; /* Centrerer teksten under billedet */
+}
+/* Placerer h3'erne centreret under billederne */
+.kompetencer-grid h3 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+/* Gør ikonerne mindre */
+.kompetencer-grid img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Bevarer billedets proportioner */
+}
+/* Tilføjer lidt luft omkring hver kompetence */
+.kompetence {
+    padding: 10px;
+}
+/* Ændrer baggrundsfarven ved hover */
+.kompetence:hover {
+    background-color: #e0d4c8;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Styler ommig sectionen således at de stpr i et 2 kolonne grid med profil i en kolonne og personligt i den anden */
+.ommig-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* To lige store kolonner */
+    gap: 20px; /* afstand mellem kolonnerne */
+    padding: 20px;
+    font-family: poppins, sans-serif;
+}
+.profil {
+  grid-column: 1 / 2; /* Placerer profilen i venstre kolonne */
+}
+.personligt {
+  grid-column: 2 / 3; /* Placerer det personlige i højre kolonne */
+}
+/* Giver sectionen ny baggrundsfarve */
+.ommig {
+    background-color: #385458;
+    color: #e0d4c8;
+    padding: 20px 0;
+    padding-bottom: 200px;
+}
+/* Giver mere luft rundt om teksten i de to sektioner og gør at tekstens linjer er lige lange*/
+.ommig-text div {
+    padding: 10px 60px;
+    text-align: justify;
+    line-height: 1.6;
+}
+.ommig-text h3 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 0;
+}
+/* Giver om mig titlen en border bottom med padding 20 px i hver side */
+.ommig h2 {
+    border-bottom: 1px solid #e0d4c8;
+    padding: 0 20px 10px 20px;
+    width: 93%;
+    margin-left: 30px;
+}
+
+footer .contact{
+    font-size: 20px;
+    text-align: center;
+}
+footer {
+    background-color: #CEB68A;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+footer p {
+  font-size: 30px;
+  text-align: center;
+}
